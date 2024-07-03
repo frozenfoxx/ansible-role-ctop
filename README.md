@@ -16,6 +16,14 @@ ctop_version: "v0.7.7"
 
 # Usage
 
+Add the role to your requirements.yml:
+
+```yml
+- name: frozenfoxx.ctop
+    src: https://github.com/frozenfoxx/ansible-role-ctop
+    version: main
+```
+
 Include the role as usual:
 
 ```yml
