@@ -1,0 +1,16 @@
+---
+- name: Download ctop binary
+  ansible.builtin.get_url:
+    url: https://github.com/bcicen/ctop/releases/download/{{ ctop_version }}/ctop-{{ ctop_version }}-linux-amd64
+    dest: /usr/local/bin/ctop
+  become: true
+  tags:
+    - ctop
+
+- name: Make ctop binary executable
+  ansible.builtin.file:
+    path: /usr/local/bin/ctop
+    mode: '0755'
+  become: true
+  tags:
+    - ctop
