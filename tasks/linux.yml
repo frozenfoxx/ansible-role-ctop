@@ -10,6 +10,8 @@
 - name: Make ctop binary executable
   ansible.builtin.file:
     path: /usr/local/bin/ctop
+    owner: 'root'
+    group: 'root'
     mode: '0755'
   become: true
   tags:
