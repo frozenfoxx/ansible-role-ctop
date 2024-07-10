@@ -1,6 +1,6 @@
 ---
-- name: Handle installation for Linux
-  ansible.builtin.import_tasks: linux.yml
-  when: ansible_facts['ansible_system']|lower == 'linux'
+- name: Handle installation for Debian
+  ansible.builtin.import_tasks: debian.yml
+  when: ansible_facts['os_family']|lower == 'Debian'
   tags:
     - ctop
