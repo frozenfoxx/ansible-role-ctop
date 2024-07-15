@@ -11,7 +11,7 @@ None
 All variables are listed below (see also `defaults/main.yml`).
 
 ```yml
-ctop_version: "v0.7.7"
+ctop_version: "0.7.7"
 ```
 
 # Usage
