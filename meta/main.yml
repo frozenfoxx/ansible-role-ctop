@@ -4,13 +4,10 @@ dependencies: []
 galaxy_info:
   role_name: ctop
   author: frozenfoxx
-  description: ctop
-  license: "Apache 2.0"
+  description: Install and configure ctop - a top-like interface for container metrics
+  license: "Apache-2.0"
   min_ansible_version: "2.10"
   platforms:
-    - name: Fedora
-      versions:
-        - all
     - name: Debian
       versions:
         - buster
@@ -21,8 +18,17 @@ galaxy_info:
         - bionic
         - focal
         - jammy
+    - name: EL
+      versions:
+        - 8
+        - 9
+    - name: Fedora
+      versions:
+        - 38
+        - 39
+        - 40
     - name: Alpine
-      version:
+      versions:
         - all
     - name: ArchLinux
       versions:
@@ -32,3 +38,4 @@ galaxy_info:
     - system
     - containers
     - docker
+    - monitoring

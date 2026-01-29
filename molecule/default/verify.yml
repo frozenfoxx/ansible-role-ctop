@@ -1,0 +1,21 @@
+---
+- name: Verify
+  hosts: all
+  tasks:
+    - name: Check if ctop is installed
+      ansible.builtin.command: which ctop
+      register: ctop_which
+      changed_when: false
+      failed_when: ctop_which.rc != 0
+
+    - name: Verify ctop is executable
+      ansible.builtin.stat:
+        path: /usr/local/bin/ctop
+      register: ctop_stat
+      failed_when: not ctop_stat.stat.exists or not ctop_stat.stat.executable
+
+    - name: Verify ctop version
+      ansible.builtin.command: ctop -v
+      register: ctop_version
+      changed_when: false
+      failed_when: ctop_version.rc != 0

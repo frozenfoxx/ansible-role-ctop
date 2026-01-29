@@ -1,6 +1,24 @@
 ---
-- name: Handle installation for Debian
+- name: Handle installation for Debian-based systems
   ansible.builtin.import_tasks: debian.yml
-  when: ansible_facts['os_family']|lower == 'debian'
+  when: ansible_facts['os_family'] | lower == 'debian'
+  tags:
+    - ctop
+
+- name: Handle installation for RedHat-based systems
+  ansible.builtin.import_tasks: redhat.yml
+  when: ansible_facts['os_family'] | lower == 'redhat'
+  tags:
+    - ctop
+
+- name: Handle installation for Alpine Linux
+  ansible.builtin.import_tasks: alpine.yml
+  when: ansible_facts['os_family'] | lower == 'alpine'
+  tags:
+    - ctop
+
+- name: Handle installation for Arch Linux
+  ansible.builtin.import_tasks: archlinux.yml
+  when: ansible_facts['os_family'] | lower == 'archlinux'
   tags:
     - ctop

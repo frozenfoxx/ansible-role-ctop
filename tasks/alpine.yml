@@ -1,0 +1,8 @@
+---
+- name: Install ctop from Alpine repositories
+  ansible.builtin.package:
+    name: ctop
+    state: present
+  become: true
+  tags:
+    - ctop
